@@ -10,16 +10,10 @@ import {
 import { Button } from '@/app/ui/button';
 import { useFormState } from 'react-dom';
 import { createInvoice } from '@/app/lib/actions';
-import { useEffect } from 'react';
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createInvoice, initialState);
-useEffect(()=>{
-const print=()=>{
-  console.log(state)
-}
-print()
-},[state])
+
   return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
